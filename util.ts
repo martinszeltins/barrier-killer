@@ -52,7 +52,7 @@ const killAllProcesses = async (processNames: string[]) => {
     }
 
     console.log(`[cmd] ${killCommand}`)
-    // await exec(killCommand)
+    await exec(killCommand)
 }
 
 const checkResourceConsumption = async (pid: string, processNames: string[]) => {
