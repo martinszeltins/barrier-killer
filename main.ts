@@ -2,12 +2,20 @@ import { getProcessIds, checkResourceConsumption } from './util'
 
 const PROCESS_NAMES = ['kdenlive', 'kdenlive']
 
-const main = async () => {
-    const pids = await getProcessIds(PROCESS_NAMES)
+const main = () => {
+    /**
+     * Run forever and check resource consumption every 30 seconds.
+     * If a process uses too much of CPU or RAM it will be killed.
+     */
+    setInterval(async () => {
+        console.log('[info] Checking resource consumption')
 
-    for (const pid of pids) {
-        await checkResourceConsumption(pid, PROCESS_NAMES)
-    }
+        const pids = await getProcessIds(PROCESS_NAMES)
+    
+        for (const pid of pids) {
+            await checkResourceConsumption(pid, PROCESS_NAMES)
+        }
+    }, 30000)
 }
 
 main()
