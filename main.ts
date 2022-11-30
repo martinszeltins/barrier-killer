@@ -1,6 +1,6 @@
 import { getProcessIds, checkResourceConsumption } from './util'
 
-const PROCESS_NAMES = ['kdenlive', 'kdenlive']
+const PROCESS_NAMES = ['barrier', 'barriers']
 
 const main = () => {
     /**
