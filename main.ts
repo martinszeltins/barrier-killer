@@ -3,6 +3,8 @@ import { getProcessIds, checkResourceConsumption } from './util'
 const PROCESS_NAMES = ['barrier', 'barriers']
 
 const main = () => {
+    console.log('[info] Barrier killer started. Watching for resource consumption.')
+    
     /**
      * Run forever and check resource consumption every 30 seconds.
      * If a process uses too much of CPU or RAM it will be killed.
