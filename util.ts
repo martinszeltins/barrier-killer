@@ -61,7 +61,7 @@ const checkResourceConsumption = async (pid: string, processNames: string[]) => 
         const memoryUsage = await getMemoryUsage(pid)
         const cpuUsage = await getCpuUsage(pid)
 
-        if (memoryUsage > 0 || cpuUsage > 0) {
+        if (memoryUsage > 0.5 || cpuUsage > 2.0) {
             console.log(`[info] Memory: ${memoryUsage}%, CPU: ${cpuUsage}%`)
             console.log('[info] Resource limit reached. Killing all processes...')
 
